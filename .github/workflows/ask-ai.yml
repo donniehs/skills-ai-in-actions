@@ -33,7 +33,7 @@ jobs:
             Give me a programming joke.
           model: auto
         env:
-          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_PAT }}
+          COPILOT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Display AI Response
         env:
