@@ -29,7 +29,7 @@ jobs:
           prompt: |
             Give me a programming joke.
         env:
-          COPILOT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_PAT }}
 
       - name: Display AI Response
         env:
