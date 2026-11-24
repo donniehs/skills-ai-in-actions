@@ -3,12 +3,6 @@ name: Ask AI
 on:
   workflow_dispatch:
 
-env:
-  ACTIONS_STEP_DEBUG: true
-
-permissions:
-  contents: read
-
 jobs:
   ask-ai:
     runs-on: ubuntu-latest
@@ -23,12 +17,15 @@ jobs:
 
       - name: AI Inference
         id: ai-response
-        uses: actions/ai-inference@v3
-        with:
-          prompt: Give me a programming joke.
-          model: gpt-4o
         env:
           COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_PAT }}
+        run: |
+          RESPONSE=$(copilot -p "Give me a programming joke." -s --no-ask-user --model gpt-4o)
+          {
+            echo "response<<EOF"
+            echo "$RESPONSE"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Display AI Response
         env:
