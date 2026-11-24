@@ -20,7 +20,7 @@ jobs:
         env:
           COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_PAT }}
         run: |
-          RESPONSE=$(copilot -p "Give me a programming joke." -s --no-ask-user --model gpt-4o)
+          RESPONSE=$(copilot -p "Give me a programming joke." -s --no-ask-user --model auto)
           {
             echo "response<<EOF"
             echo "$RESPONSE"
