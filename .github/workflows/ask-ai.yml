@@ -8,7 +8,6 @@ env:
 
 permissions:
   contents: read
-  copilot-requests: write
 
 jobs:
   ask-ai:
@@ -26,8 +25,8 @@ jobs:
         id: ai-response
         uses: actions/ai-inference@v3
         with:
-          prompt: |
-            Give me a programming joke.
+          prompt: Give me a programming joke.
+          model: gpt-4o
         env:
           COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_PAT }}
 
