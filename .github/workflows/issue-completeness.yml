@@ -1,0 +1,9 @@
+name: Issue Completeness
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  models: read
+  issues: write
