@@ -23,6 +23,7 @@ jobs:
         id: ai-response
         uses: actions/ai-inference@v3
         with:
+          model: gpt-4o
           prompt: |
             Give me a programming joke.
         env:
